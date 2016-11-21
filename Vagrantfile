@@ -17,6 +17,7 @@ Vagrant.configure("2") do |config|
     git.vm.provision "shell", path: "provision-git.sh"
     git.vm.provision "file", source: "gitconfig.sh", destination: "gitconfig.sh"
     git.vm.provision "shell", inline: "sudo chmod 755 gitconfig.sh"
+ #   git.vm.provision "shell", inline: "sudo ./gitconfig.sh"
     git.vm.hostname = "vagrant-dev"
 
   end
