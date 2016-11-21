@@ -15,6 +15,8 @@ Vagrant.configure("2") do |config|
     # git.vm.network "private_network", ip: "192.168.11.11"
 
     git.vm.provision "shell", path: "provision-git.sh"
+    git.vm.provision "file", source: "gitconfig.sh", destination: "gitconfig.sh"
+    git.vm.provision "shell", inline: "./gitconfig.sh"
     git.vm.hostname = "vagrant-dev"
 
   end
